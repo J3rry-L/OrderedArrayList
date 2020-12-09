@@ -16,4 +16,9 @@ public class OrderedArrayList<T extends Comparable<T>> extends NoNullArrayList<T
     super.add(findIndex(element), element);
     return true;
   }
+  public T set(int index, T element){
+    remove(index);
+    add(element);
+    return(element);
+  }
 }
