@@ -7,12 +7,13 @@ public class OrderedArrayList<T extends Comparable<T>> extends NoNullArrayList<T
   }
   private int findIndex(T element){
     int index = 0;
-    while(element.compareTo(get(index + 1)) > 0){
+    while(index + 1 < size() && element.compareTo(get(index + 1)) > 0){
       index++;
     }
     return index;
   }
   public boolean add(T element){
-    return false;
+    super.add(findIndex(element), element);
+    return true;
   }
 }
