@@ -7,7 +7,7 @@ public class Tester{
       expectNullError.add(null);
     }
     catch(IllegalArgumentException e){
-          System.out.println("IllegalArgumentException");
+      System.out.println("IllegalArgumentException");
     }
     NoNullArrayList<Integer> numbers = new NoNullArrayList<Integer>();
     System.out.println(numbers.add((Integer) 111));
@@ -43,5 +43,13 @@ public class Tester{
     System.out.println(B);
     System.out.println(B.add("dates"));
     System.out.println(B);
+    System.out.println(B.set(1, "zebra"));
+    System.out.println(B);
+    try{
+      B.set(1, null);
+    }
+    catch(IllegalArgumentException e){
+      System.out.println("IllegalArgumentException");
+    }
   }
 }
